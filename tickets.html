@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Conf Bs As - Comprar Tickets</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #353a40;">
+        <div class="container">
+            <a class=" navbar-brand" href="/index.html"><img src="img/codoacodo.png" width="120" alt="codo a codo logo">
+                Conf Bs As</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="/index.html" class="nav-link" aria-current="page">La conferencia</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#oradores">Los oradores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#lugar-fecha">El lugar y la fecha</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#inscripcion">Conviértete en orador</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/tickets.html" style="color: #29a744;">Comprar tickets</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div id="categorias" class="container-lg cards m-auto p-5">
+        <div class="row row-cols-lg-3 d-flex justify-content-center">
+            <div class="col my-3">
+                <div class="card border border-primary rounded-0">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Estudiante</h5>
+                      <p>Tienen un descuento</p>
+                      <p><strong>80%</strong></p>
+                      <small class="text-muted">*presentar documentación</small>
+                    </div>
+                  </div>
+            </div>
+            <div class="col my-3">
+                <div class="card border border-success rounded-0">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Trainee</h5>
+                      <p>Tienen un descuento</p>
+                      <p><strong>50%</strong></p>
+                      <small class="text-muted">*presentar documentación</small>
+                    </div>
+                  </div>
+            </div>
+            <div class="col my-3">
+                <div class="card border border-warning rounded-0">
+                    <div class="card-body text-center">
+                      <h5 class="card-title">Junior</h5>
+                      <p>Tienen un descuento</p>
+                      <p><strong>15%</strong></p>
+                      <small class="text-muted">*presentar documentación</small>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="comprar" class="container form my-2">
+        <div class="section-title d-flex flex-column justify-content-center align-items-center m-2">
+            <p class="text-secondary text-uppercase">Venta</p>
+            <h2 class="text-uppercase">Valor de ticket $200</h2>
+        </div>
+        <form>
+            <div class="row row-cols-2">
+                <div class="col my-2">
+                    <input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre">
+                </div>
+                <div class="col my-2">
+                    <input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido">
+                </div>
+            </div>
+            <div class="my-2">
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Correo" aria-describedby="emailHelp">
+            </div>
+            <div class="row row-cols-2">
+                <div class="my-2">
+                    <label for="cantidad" class="form-label">Cantidad</label>
+                    <input type="number" class="form-control" id="cantidad" placeholder="Cantidad" >
+                </div>
+                <div class="my-2">
+                    <label for="exampleInputPassword1" class="form-label">Categoría</label>
+                    <select class="form-select" id="categoria" name="categoria-elegida" aria-label="Default select example">
+                        <option value="1" selected>Estudiante</option>
+                        <option value="2">Trainee</option>
+                        <option value="3">Junior</option>
+                        <option value="4">Público general</option>
+                      </select>
+                </div>
+            </div>
+            <div class="alert alert-primary my-4" role="alert">
+                Total a pagar: $<span id="totalPagar"></span>
+            </div>
+            <div class="row row-cols-2 mb-4">
+                <div class="form-group col-md-6">
+                    <button type="button" onclick="borrarTotal()" class="btn btn-primary-2 btn-block w-100">Borrar</button>
+                </div>
+                <div class="form-group col-md-6">
+                    <button type="button" onclick="calcularTotal()" class="btn btn-primary-2  btn-block w-100">Resumen</button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted mt-5">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <div class="collapse navbar-collapse d-flex justify-content-center " id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item p-4">
+                            <a class="nav-link" aria-current="page">Preguntas frecuentes</a>
+                        </li>
+                        <li class="nav-item p-4">
+                            <a class="nav-link" href="#">Contáctanos</a>
+                        </li>
+                        <li class="nav-item p-4">
+                            <a class="nav-link" href="#">Prensa</a>
+                        </li>
+                        <li class="nav-item p-4">
+                            <a class="nav-link" href="#">Conferencias</a>
+                        </li>
+                        <li class="nav-item p-4">
+                            <a class="nav-link" href="#">Términos y condiciones</a>
+                        </li>
+                        <li class="nav-item p-4">
+                            <a class="nav-link" href="#">Privacidad</a>
+                        </li>
+                        <li class="nav-item p-4">
+                            <a class="nav-link" href="#">Estudiantes</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </footer>
+
+    <!-- Mi JavaScript -->
+    <script>
+        function calcularTotal() {
+            let cantidad = document.querySelector('#cantidad').value;
+            let categoria = document.getElementById('categoria').value;
+            const valor = 200;
+            let total;
+            
+            switch (categoria) {
+                case '1':
+                    total = (cantidad * valor) - ((cantidad * valor) * 0.8);
+                    break;
+                case '2':
+                    total = (cantidad * valor) - ((cantidad * valor) * 0.5); 
+                    break;
+                case '3':
+                    total = (cantidad * valor) - ((cantidad * valor) * 0.15);
+                    break;
+                default:
+                    total = (cantidad * valor);
+                    break;
+                return total;
+            }
+            document.getElementById('totalPagar').textContent = total;
+        }
+
+        function borrarTotal() {
+            document.getElementById('totalPagar').textContent = '';
+        }
+    </script>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+
+        
+</body>
+</html>
